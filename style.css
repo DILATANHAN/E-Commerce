@@ -114,6 +114,86 @@ header{
     z-index: -1;
     font-weight: 900;
 }
+/* Products */
+.heading{
+    text-align: center;
+    font-size: 64px;
+    font-weight: 900;
+}
+.product-container{
+   display: grid;
+   grid-template-columns: repeat(4,1fr);
+   gap: 16px;
+   margin-top: 32px;
+}
+.product-img{
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+.product-info{
+    display: flex;
+    flex-direction: column;
+}
+.product-title{
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-color);
+    margin: 12px 0 8px;
+}
+.product-price{
+    font-size: 19px;
+    font-weight: 300;
+    color: var(--main-color);
+}
+.add-to-cart{
+    background-color: var(--main-color);
+    color: var(--bg-color);
+    font-weight: 600;
+    padding: 10px;
+    letter-spacing: 1px;
+    margin-top: 45px;
+    cursor: pointer;
+    text-align: center;
+}
+/* Footer */
+footer{
+    background-color: var(--main-color);
+    padding: 40px 0;
+}
+.footer-c{
+    display: grid;
+    grid-template-columns: 60% 20% 20%;
+    gap: 16px;
+}
+.footer-box{
+    display: flex;
+    flex-direction: column;
+}
+.footer-box h2{
+    font-size: 128px;
+    color: var(--bg-color);
+    text-transform: uppercase;
+}
+.social{
+    display: flex;
+    align-items: center;
+    column-gap: 16px;
+}
+.social .bx{
+    background: var(--bg-color);
+    font-size: 20px;
+    padding: 10px;
+    color: var(--main-color);
+    border-radius: 50%;
+}
+.footer-box h3{
+color: var(--bg-color);
+}
+.footer-box a{
+    color: var(--bg-color);
+    padding: 30px;
+}
 /* Responsive */
 @media(max-width: 1200px){
     .container{
@@ -123,6 +203,9 @@ header{
     .home-img::before{
         font-size: 128;
         top: -35px;
+    }
+    .product-container{
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 @media (max-width: 910px){
@@ -169,7 +252,7 @@ header{
         clip-path: circle(144% at 0% 0%);
     } */
     .navbar.open-menu{
-        clip-path: circle(144% at 0% 0%);
+        display: none;
     }
     .home{
         min-height: 520px;
@@ -177,5 +260,13 @@ header{
     .home-img::before{
         font-size: 64px;
         top: -30px;
+    }
+    .product-container{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+@media(max-width: 400px){
+    .product-container{
+        grid-template-columns: 1fr;
     }
 }
