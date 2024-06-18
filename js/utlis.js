@@ -15,7 +15,7 @@
    const cartIcon = document.getElementById("cart-icon");
    const i = document.querySelector(".bx-shopping-bag");
    console.log(i);
-   let totalQuantity =cart.reduce((sum,item) => sum+item.quantify,0);
+   let totalQuantity =cart.reduce((sum,item) => sum+item.quantity,0);
    console.log(totalQuantity);
    i.setAttribute("data-quantify",totalQuantity);
  }

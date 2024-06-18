@@ -51,8 +51,13 @@ export function addToCart(event,  products){
     displayCartTotal();
     updateCartIcon(cart);
      }
+
      function changeQuantity(event){
-      const quantity = parseInt(event.target.dataset.id);
+      //* Inputun icerisinde ki degeri aldik
+      const quantity = parseInt(event.target.value);
+      //* Degisim olan urunun id sine eristik
+      const productID = parseInt(event,target,dataset.id);
+
       if(quantity > 0){
         const cartItem = cart.find((item) => item.id === productID);
         if(cartItem) {
@@ -63,10 +68,10 @@ export function addToCart(event,  products){
         }
       }
      }
-     function changeQuantity(){
+     function changeQuantity(event){
       console.log("Event");
      }
-  //*Sepette ki urunleri renderler.
+  //*Sepette ki urunleri ekrana renderler.
 export function renderCartItems() {
   //*id'sine gore HTML etiketini aldik.
  const cartItemsElement = document.getElementById("cartItems");
@@ -90,7 +95,7 @@ export function renderCartItems() {
   data-id="${item.id}"
   />
  </div>
- <h2>$${item.price} </h2>
+ <h2>$${item.price}</h2>
  <button class="remove-from-cart" data-id="${item.id} ">Remove</button>
 </div
 
