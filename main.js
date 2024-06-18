@@ -1,6 +1,14 @@
-let menu = document.querySelector(".navbar");
+import { addToCart,displayCartTotal,renderCartItems} from "./js/cart.js";
+import { fetchProducts, renderProducts } from "./js/products.js";
 
-let menuIcon = document.querySelector("#menu-icon");
-//* Menu iconuna tiklanildiginda "open-menu"classini ekle cikar
-menuIcon.addEventListener("click", () => menu.classList.toggle("open-menu"));
-
+document.addEventListener("DOMContentLoaded", async () => {
+  if(window.location.pathname.includes("cart.html")){
+   renderCartItems();
+   displayCartTotal();
+  } else {
+    //* Eger sayfa cart.html sayfasinda degilse urunleri al.
+    const products = await fetchProducts();
+    //* Urunleri render et ve addToCartCallback fonksiyonu tanimla
+   renderProducts(products, (event) => addToCart(event, products));
+  }
+}) ;
