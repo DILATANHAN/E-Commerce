@@ -68,9 +68,6 @@ export function addToCart(event,  products){
         }
       }
      }
-     function changeQuantity(event){
-      console.log("Event");
-     }
   //*Sepette ki urunleri ekrana renderler.
 export function renderCartItems() {
   //*id'sine gore HTML etiketini aldik.
