@@ -17,7 +17,7 @@ export async function fetchProducts() {
 //* Urunlerin sayfaya render eden fonksiyonu tanimliyoruz.
 export function renderProducts(products,addToCartCallback) {
     // * HTML dosyasindan urunlerin listelenecegi elementi seceriz.
-    const productList =document.getElementById("productList");
+    const productList = document.getElementById("productList");
   
     //* Urunlerin HTML formatinda listeleye eklenmesi icin products dizisini donup her bir product icin ekrana product cartini aktaririz
     productList.innerHTML = products
@@ -31,8 +31,8 @@ export function renderProducts(products,addToCartCallback) {
             />
             <div class="product-info">
               <h2 class="product-title">${product.title} </h2>
-              <p class="product-price">${product.price} </p>
-              <a class="add-to-cart" data-id="${product.id} ">Add to cart</a>
+              <p class="product-price">$${product.price} </p>
+              <a class="add-to-cart" data-id="${product.id}">Add to cart</a>
             </div>
           </div>   
             `

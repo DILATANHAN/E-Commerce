@@ -17,7 +17,7 @@
    console.log(i);
    let totalQuantity =cart.reduce((sum,item) => sum+item.quantity,0);
    console.log(totalQuantity);
-   i.setAttribute("data-quantify",totalQuantity);
+   i.setAttribute("data-quantity",totalQuantity);
  }
 
  export function calculateCartTotal(cart){
