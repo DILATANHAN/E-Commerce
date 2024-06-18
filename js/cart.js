@@ -21,11 +21,11 @@ export function addToCart(event,  products){
     }else{
         //*Sepette bu urunden daha once yoksa sepete yeni bir urun ekleyecegiz.
         //* Sepet dizisine ekleyecegimiz urunun miktar ozelligini ekledik.
-             const cartItem ={
+             const cartItem = {
             id:product.id,
-            title:product.title,
-            price:product.price,
-            image:product.image,
+            title: product.title,
+            price: product.price,
+            image: product.image,
             quatify: 1,
      };
      //* Cart dizisine yeni olusturdugumuz objeyi gonderdik
@@ -63,14 +63,17 @@ export function addToCart(event,  products){
         }
       }
      }
-
+     function changeQuantity(){
+      console.log("Event");
+     }
   //*Sepette ki urunleri renderler.
 export function renderCartItems() {
   //*id'sine gore HTML etiketini aldik.
  const cartItemsElement = document.getElementById("cartItems");
  //* Sepette ki herbir urun icin ekrana birmtane cart-item bileseni aktardik.
-  cartItemsElement.innerHTML =cart.map((item) =>  `
-
+  cartItemsElement.innerHTML = cart
+  .map(
+    (item) =>  `
  <div class="cart-item">
  <img
  src="${item.image}"
@@ -79,13 +82,15 @@ export function renderCartItems() {
 
  <div class="cart-item-info">
   <h2 class="cart-item-title">${item.title} </h2>
-  <input type="number" 
+  <input 
+  type="number" 
   min="1"
   value="${item.quantity}"
   class="cart-item-quantity"
+  data-id="${item.id}"
   />
  </div>
- <h2>${item.price} </h2>
+ <h2>$${item.price} </h2>
  <button class="remove-from-cart" data-id="${item.id} ">Remove</button>
 </div
 
@@ -101,9 +106,9 @@ export function renderCartItems() {
   removeButton.addEventListener("click", removeFromCart); 
  }
 
- const quantityInputs =document.getElementsByClassName("cart-item-quantity");
+ const quantityInputs = document.getElementsByClassName("cart-item-quantity");
  console.log(quantityInputs);
- for(let i=1; i<quantityInputs.length; i++){
+ for(let i = 1; i < quantityInputs.length; i++){
   const quantityInput =quantityInputs[i];
   console.log(quantityInput);
 
@@ -117,5 +122,5 @@ export function displayCartTotal(){
   const cartTotalElement =document.getElementById("cartTotal");
   const total = calculateCartTotal(cart);
   cartTotalElement.textContent = `
-  Total: ${total.toFixed(2)}`;
+  Total: $${total.toFixed(2)}`;
 }
