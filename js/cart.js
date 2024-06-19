@@ -26,11 +26,11 @@ export function addToCart(event,  products){
             title: product.title,
             price: product.price,
             image: product.image,
-            quatify: 1,
+            quatity: 1,
      };
      //* Cart dizisine yeni olusturdugumuz objeyi gonderdik
      cart.push(cartItem);
-      event.target.textContent= "Added" ; //* Ekleme butonunun icerigini degistirdik.
+      event.target.textContent = "Added"; //* Ekleme butonunun icerigini degistirdik.
       updateCartIcon(cart);
       saveToLocalStorage(cart);
       renderCartItems();
