@@ -71,7 +71,7 @@ header{
     font-size: 29px;
 }  
 .bx-shopping-bag::after{
-    content: attr(data-quantify);
+    content: attr(data-quantity);
     position: absolute;
     top: 0;
     right: -11px;
