@@ -17,7 +17,7 @@ export function addToCart(event,  products){
     //* Sepette bu urunden daha once varsa if calisacak.
     if(exitingItem){
         //* Miktarini 1 arttirir.
-        exitingItem.quatify++;
+        exitingItem.quantity++;
     }else{
         //*Sepette bu urunden daha once yoksa sepete yeni bir urun ekleyecegiz.
         //* Sepet dizisine ekleyecegimiz urunun miktar ozelligini ekledik.
