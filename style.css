@@ -208,6 +208,7 @@ color: var(--bg-color);
     padding-top: 30px;
 }
 /*! Cart.html */
+
 .cart-container{
     margin-top: 115px !important;
 }
@@ -252,7 +253,7 @@ color: var(--bg-color);
  .cart-item-title{
     font-size: 18px;
  }
- .cart-item-quantify{
+ .cart-item-quantity{
     border: 1px solid var(--text-color);
     outline: none;
     width: 40px;

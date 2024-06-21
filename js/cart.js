@@ -26,7 +26,7 @@ export function addToCart(event,  products){
             title: product.title,
             price: product.price,
             image: product.image,
-            quatity: 1,
+            quantity: 1,
      };
      //* Cart dizisine yeni olusturdugumuz objeyi gonderdik
      cart.push(cartItem);
